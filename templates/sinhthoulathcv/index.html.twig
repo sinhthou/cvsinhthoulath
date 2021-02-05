@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SinhthoulathcvController!{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        {% for cv in cv %}
+
+            <div class="row" id="deux">
+
+                <div class="col-md-12" id="p">{{cv.presentation}}</div>
+
+                <div class="col-md-12" id="present">
+                    <div class="col-md-3" id="photoprofil"><img src="{{ asset('image/' ~ cv.photo) }}" class="responsive-img" id="profil" alt="Sinhthoulath"></div>
+                    <div class="col-md-9" id="identite">
+                        <div class="col-md-12" id="nom">{{cv.nom}}</div>
+                        <div class="col-md-12" id="prenom">{{cv.prenom}}</div>
+                        <div class="col-md-12" id="daten">{{cv.datenaissance|date('d/m/Y')}}</div>
+                        <div class="col-md-12" id="emploi">{{cv.emploi}}</div><br>
+                        <div class="col-md-12">A Propos</div>
+                        <div class="col-md-12" id="apropos">{{cv.apropos}}</div>
+                    </div>
+                </div>
+
+                <div class="col-md-12" id="competence">
+                    <div class="col-md-12" id="titrecomp">Compétences</div>
+                    <div class="col-md-12" id="clickcomp"><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></div>
+                    <div class="col-md-12" id="compet1">{{cv.competence}}</div>
+                </div>
+                <div class="col-md-12" id="maskcomp"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></div>
+                <!-- FIN COMPETENCE -->
+
+                <div class="col-md-12" id="formation">
+                    <div class="col-md-12" id="titreform">Formations</div>
+                    <div class="col-md-12" id="clickform"><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></div>
+                    <div class="col-md-12" id="formjs">
+                        <div class="col-md-4" id="anneeform">Année de formation</div>
+                        <div class="col-md-4" id="lieuform">Lieu de formation</div>
+                        <div class="col-md-4" id="nomform">Nom de formation</div>
+                        <div class="col-md-4" id="formannee">{{cv.anneeform}}</div>
+                        <div class="col-md-4" id="formlieu">{{cv.lieuform}}</div>
+                        <div class="col-md-4" id="formnom">{{cv.nomformation}}</div>
+                    </div>                   
+                </div>
+                <div class="col-md-12" id="maskform"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></div>
+                <!-- FIN FORMATION -->
+
+                <div class="col-md-12" id="experience">
+                    <div class="col-md-12" id="titreexperience">Expériences</div>
+                    <div class="col-md-12" id="clickcv"><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></div>
+                    <div class="col-md-12" id="expjs">
+                        <div class="col-md-3" id="moisanneer">Fin-Debut</div>
+                        <div class="col-md-3" id="lieur">Lieu de travail</div>
+                        <div class="col-md-3" id="nommetierr">Métier</div>
+                        <div class="col-md-3" id="travailr">Travail</div>
+                            <div class="col-md-3" id="moisannee">{{cv.finexp}} - {{cv.debutexp}}</div>
+                            <div class="col-md-3" id="lieu">{{cv.lieuexp}}</div>
+                            <div class="col-md-3" id="nommetier">{{cv.nommetier}}</div>
+                            <div class="col-md-3" id="travail">{{cv.descriptionmetier}}</div>
+                    </div>   
+                    <div class="col-md-12" id="maskcv"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></div> 
+                </div>    
+                <!-- FIN EXPERIENCE -->
+    
+                <div class="col-md-12" id="int">
+                    <div class="col-md-12" id="titreint">Interêts</div>
+                    <div class="col-md-12" id="clickint"><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></div>
+                    <div class="col-md-12" id="intjs">
+                        <div class="col-md-12" id="hobbie">{{cv.hobbie}}</div>
+                        <div class="col-md-12" id="photohobbie"><img src="{{ asset('image/' ~ cv.mediahobbie) }}" class="responsive-img" id="photohob" alt="Sinhthoulath"></div>
+                        <div class="col-md-12" id="texthob">{{cv.descriptionhobbie}}</div>
+                    </div>
+                </div>    
+                <div class="col-md-12" id="maskint"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></div>
+                <!-- FIN INTERET --> 
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

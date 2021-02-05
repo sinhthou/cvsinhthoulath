@@ -1,0 +1,42 @@
+{% block body %}
+
+<div class="container-fluid">
+        
+    <div class="row" id="voir">
+
+        {% if app.user %}
+            <div class="col-md-12" id="logout">{{ app.user.username }}<a href="{{ path('app_logout') }}"><i class="fa fa-power-off fa-3x" aria-hidden="true"></i></a></div>
+                {% else %}
+                    <div class="col-md-12" id="login"><a href="{{path('app_login')}}"><i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i></a></div>
+        {% endif %}
+
+        <div class="col-md-12" id="titre"><a href="#">CV Sinhthoulath VIENG LOUANG</a></div>
+
+        <div class="col-md-12" id="allcontent">
+
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light" id="navbarone">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav" id="try">
+                            <a class="col-md-4" id="presentation" href="#">Présentation</a>
+                            <a class="col-md-4" id="cv" href="#">CV</a>
+                            <a class="col-md-4" id="interet" href="#">Interêt</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- FIN NAVBAR -->
+        
+        </div>
+        <!-- FIN CONTENTALL -->
+    
+    </div>
+    <!-- FIN ROW -->
+
+</div>
+<!-- FIN CONTAINER -->
+
+{% endblock %}
